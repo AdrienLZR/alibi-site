@@ -1,0 +1,1131 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALIBI — Accueil</title>
+<!-- deploy -->
+<link rel="icon" type="image/png" href="logoiconfinal-rounded.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap">
+
+<style>
+:root {
+  --bg:        #09091A;
+  --surface:   #11122B;
+  --surface2:  #1A1C38;
+  --surface3:  #22254A;
+  --border:    rgba(255,255,255,.09);
+  --border2:   rgba(255,255,255,.14);
+  --gold:      #E8B923;
+  --gold-rgb:  232,185,35;
+  --gold-dim:  rgba(232,185,35,.12);
+  --gold-mid:  rgba(232,185,35,.35);
+  --gold-glow: rgba(232,185,35,.22);
+  --gold-txt:  #F5C842;
+  --violet:    #6C63FF;
+  --violet-dim:rgba(108,99,255,.12);
+  --text:      #F0EBE0;
+  --paper2:    #BDB5A8;
+  --muted:     #6A6E8A;
+  --red:       #E03055;
+  --red-rgb:   224,48,85;
+  --red-dim:   rgba(224,48,85,.14);
+
+  --f-display: 'Oswald', system-ui, sans-serif;
+  --f-body:    'DM Sans', system-ui, sans-serif;
+  --f-mono:    'DM Mono', 'Courier New', monospace;
+  --radius:    12px;
+  --radius-sm: 8px;
+  --radius-btn:10px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+/* subtle noise */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  opacity: .03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+/* ── NAVBAR ── */
+.nav {
+  position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 100;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 0 24px;
+  height: 64px;
+  width: calc(100% - 48px);
+  max-width: 1120px;
+  background: rgba(9,9,26,.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border2);
+  border-radius: 999px;
+}
+
+.nav-logo {
+  display: flex; align-items: center; gap: 9px;
+  font-family: var(--f-display);
+  font-size: 1.9rem;
+  letter-spacing: .08em;
+  color: var(--gold-txt);
+  flex-shrink: 0;
+}
+.nav-logo svg { flex-shrink: 0; }
+
+/* centered nav items with icon + label */
+.nav-links {
+  display: flex; gap: 4px; list-style: none;
+  position: absolute; left: 50%; transform: translateX(-50%);
+}
+.nav-links a {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  transition: background .18s, color .18s;
+  color: var(--paper2);
+}
+.nav-links a:hover { background: var(--surface2); color: var(--gold-txt); }
+.nav-links a.active { color: var(--gold-txt); }
+.nav-links .nav-icon { width: 18px; height: 18px; }
+.nav-links .nav-label {
+  font-size: .58rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 500;
+  line-height: 1;
+}
+
+.nav-right { display: flex; gap: 10px; flex-shrink: 0; }
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--red);
+  color: #fff;
+  font-weight: 700; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase;
+  padding: 9px 20px;
+  border-radius: var(--radius-btn);
+  transition: opacity .2s, transform .15s, box-shadow .2s;
+}
+.nav-cta:hover { opacity: .88; transform: translateY(-1px); box-shadow: 0 6px 22px rgba(var(--red-rgb),.35); }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 660px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 140px clamp(20px, 5vw, 72px) 80px;
+  overflow: hidden;
+}
+
+/* radial glow behind title */
+.hero-glow {
+  position: absolute; width: 700px; height: 400px;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  background:
+    radial-gradient(ellipse at 38% 50%, rgba(var(--gold-rgb),.09) 0%, transparent 60%),
+    radial-gradient(ellipse at 62% 50%, rgba(var(--red-rgb),.07) 0%, transparent 60%);
+  pointer-events: none; z-index: 1;
+}
+
+/* grid paper */
+.hero::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+/* floating decorations */
+.float { position: absolute; pointer-events: none; user-select: none; }
+.float-loupe {
+  top: 50px; right: 4%;
+  width: clamp(150px, 18vw, 240px);
+  opacity: .18;
+  animation: drift-a 8s ease-in-out infinite;
+}
+.float-fp-tl {
+  top: 80px; left: 4%;
+  width: clamp(80px, 10vw, 130px);
+  opacity: .09;
+  animation: drift-b 10s ease-in-out infinite;
+}
+.float-card-l {
+  bottom: 55px; left: 3%;
+  width: 88px; opacity: .28;
+  transform: rotate(-16deg);
+  animation: drift-c 7s ease-in-out infinite;
+}
+.float-card-r {
+  bottom: 75px; right: 5%;
+  width: 78px; opacity: .22;
+  transform: rotate(13deg);
+  animation: drift-d 9s ease-in-out infinite;
+}
+.float-fp-br { display: none; }
+/* petits ronds décoratifs fond */
+.dot {
+  position: absolute; pointer-events: none; border-radius: 50%;
+  background: var(--red); animation: drift-b 10s ease-in-out infinite;
+}
+.dot-gold { background: var(--gold) !important; }
+.dot-1  { width:10px; height:10px; top:12%;    left:15%;  opacity:.30; animation-delay:0s; }
+.dot-2  { width: 7px; height: 7px; top:70%;    left:7%;   opacity:.22; animation-delay:2s; }
+.dot-3  { width:12px; height:12px; top:42%;    left:30%;  opacity:.25; animation-delay:1s; }
+.dot-4  { width: 8px; height: 8px; bottom:18%; left:38%;  opacity:.28; animation-delay:3s; }
+.dot-5  { width:10px; height:10px; top:22%;    left:50%;  opacity:.20; animation-delay:5s; }
+.dot-6  { width: 6px; height: 6px; top:58%;    left:22%;  opacity:.18; animation-delay:4s; }
+.dot-7  { width: 9px; height: 9px; bottom:28%; left:18%;  opacity:.24; animation-delay:1.5s; }
+.dot-8  { width:11px; height:11px; top:14%;    right:12%; opacity:.28; animation-delay:2.5s; }
+.dot-9  { width: 8px; height: 8px; top:58%;    right:8%;  opacity:.22; animation-delay:0.5s; }
+.dot-10 { width:13px; height:13px; top:34%;    right:24%; opacity:.20; animation-delay:3.5s; }
+.dot-11 { width: 7px; height: 7px; bottom:22%; right:16%; opacity:.25; animation-delay:1s; }
+.dot-12 { width:10px; height:10px; top:74%;    right:38%; opacity:.18; animation-delay:4.5s; }
+.dot-13 { width: 9px; height: 9px; top:8%;     right:42%; opacity:.22; animation-delay:6s; }
+.dot-14 { width: 6px; height: 6px; bottom:38%; right:28%; opacity:.20; animation-delay:2s; }
+.dot-15 { width: 8px; height: 8px; top:48%;    right:55%; opacity:.18; animation-delay:3s; }
+.dot-16 { width:11px; height:11px; bottom:12%; right:52%; opacity:.24; animation-delay:1.8s; }
+
+@keyframes drift-a { 0%,100%{ transform:translateY(0) rotate(0deg);} 50%{transform:translateY(-18px) rotate(3deg);} }
+@keyframes drift-b { 0%,100%{ transform:translateY(0) rotate(0deg);} 50%{transform:translateY(-12px) rotate(-4deg);} }
+@keyframes drift-c { 0%,100%{ transform:translateY(0) rotate(-16deg);} 50%{transform:translateY(-14px) rotate(-20deg);} }
+@keyframes drift-d { 0%,100%{ transform:translateY(0) rotate(13deg);} 50%{transform:translateY(-10px) rotate(9deg);} }
+@media (prefers-reduced-motion: reduce) { .float { animation: none !important; } }
+
+.hero-inner {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: row; align-items: center;
+  gap: clamp(32px, 6vw, 80px);
+  max-width: 1120px; width: 100%;
+}
+.hero-text {
+  flex: 1; min-width: 0;
+  display: flex; flex-direction: column; align-items: flex-start;
+  text-align: left;
+}
+.hero-logo-right {
+  flex-shrink: 0;
+  width: clamp(180px, 28vw, 380px);
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-logo-right img {
+  width: 100%; height: auto;
+  filter: drop-shadow(0 0 60px rgba(232,185,35,.35));
+  animation: drift-logo 6s ease-in-out infinite;
+}
+@keyframes drift-logo {
+  0%,100% { transform: translateY(0) rotate(-1deg); }
+  50%      { transform: translateY(-20px) rotate(1deg); }
+}
+.hero-eyebrow {
+  font-family: var(--f-mono); font-size: .63rem;
+  letter-spacing: .26em; text-transform: uppercase; color: var(--gold-txt);
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-eyebrow::after {
+  content: ''; display: inline-block; width: 30px; height: 1px; background: var(--gold-mid);
+}
+.hero-title {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: clamp(6rem, 15vw, 12rem);
+  line-height: .88; letter-spacing: .05em; color: var(--text);
+  text-shadow: 0 0 140px rgba(var(--gold-rgb),.12), 0 0 80px rgba(var(--red-rgb),.10);
+  margin-bottom: 10px;
+}
+.hero-sub {
+  font-size: clamp(.95rem, 2vw, 1.2rem);
+  color: var(--paper2); font-weight: 300;
+  max-width: 480px; margin-bottom: 36px; line-height: 1.58;
+}
+.redact {
+  display: inline; position: relative; cursor: pointer;
+  user-select: none; -webkit-user-select: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+.redact::before {
+  content: ''; position: absolute; inset: 1px -2px;
+  background: var(--paper2); border-radius: 3px;
+  transition: opacity .3s; pointer-events: none;
+}
+.redact:hover::before,
+.redact:focus::before,
+.redact.revealed::before { opacity: 0; }
+
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-start; }
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--red); color: #fff;
+  font-weight: 700; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase;
+  padding: 13px 28px; border-radius: var(--radius-btn);
+  transition: opacity .2s, transform .15s, box-shadow .2s;
+}
+.btn-primary:hover {
+  opacity: .9; transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(var(--red-rgb),.35);
+}
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1.5px solid rgba(var(--gold-rgb),.4); color: var(--gold-txt);
+  font-size: .82rem; font-weight: 500; letter-spacing: .07em; text-transform: uppercase;
+  padding: 13px 28px; border-radius: var(--radius-btn);
+  transition: border-color .2s, background .2s, transform .15s;
+}
+.btn-ghost:hover {
+  border-color: var(--gold); background: var(--gold-dim); transform: translateY(-2px);
+}
+
+/* ── FEATURES STRIP ── */
+.features {
+  position: relative; z-index: 2;
+  padding: 0 clamp(20px, 5vw, 72px) 72px;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+.feat-card {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: background .2s, border-color .2s, transform .2s, box-shadow .2s;
+}
+.feat-card:hover {
+  background: var(--surface2);
+  border-color: rgba(var(--gold-rgb),.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(var(--gold-rgb),.12);
+}
+.feat-icon { width: 30px; height: 30px; margin-bottom: 14px; color: var(--gold-txt); }
+.feat-card:nth-child(odd) .feat-icon { color: var(--red); }
+.feat-card:nth-child(odd):hover { border-color: rgba(var(--red-rgb),.3); box-shadow: 0 8px 28px rgba(var(--red-rgb),.12); }
+.feat-title {
+  font-family: var(--f-display); font-size: 1.25rem;
+  letter-spacing: .04em; color: var(--text); margin-bottom: 7px;
+}
+.feat-desc { font-size: .84rem; color: var(--paper2); line-height: 1.55; }
+
+/* ── SECTION ── */
+.section { padding: 72px clamp(20px, 5vw, 72px); position: relative; z-index: 2; }
+.section-label {
+  font-family: var(--f-mono); font-size: .62rem;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--gold-txt); margin-bottom: 10px;
+}
+.section-title {
+  font-family: var(--f-display);
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  line-height: 1; color: var(--text);
+  max-width: 600px; margin-bottom: 44px; text-wrap: balance;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 28px;
+}
+.step {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  padding: 24px 22px;
+  display: flex; flex-direction: column; gap: 10px;
+  transition: background .2s, border-color .2s, transform .2s;
+}
+.step:hover {
+  background: var(--surface2);
+  border-color: rgba(var(--gold-rgb),.3);
+  transform: translateY(-3px);
+}
+.step-num {
+  font-family: var(--f-mono); font-size: .6rem;
+  letter-spacing: .16em; color: var(--muted);
+}
+.step-name {
+  font-family: var(--f-display); font-size: 1.4rem;
+  letter-spacing: .04em; color: var(--gold-txt); line-height: 1.1;
+}
+.step:nth-child(even) .step-name { color: var(--red); }
+.step-desc { font-size: .84rem; color: var(--paper2); line-height: 1.55; }
+.step-divider { width: 28px; height: 2px; background: var(--gold-mid); border-radius: 1px; }
+
+/* ── EN LIGNE ── */
+.online-section {
+  padding: 0 clamp(20px, 5vw, 72px) 72px;
+  position: relative; z-index: 2;
+}
+.online-card {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  padding: 48px clamp(24px, 5vw, 60px);
+  display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
+  position: relative; overflow: hidden;
+}
+.online-card::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+  background: linear-gradient(180deg, var(--red), var(--gold-txt));
+  border-radius: 4px 0 0 4px;
+}
+.online-tag {
+  display: inline-block; font-family: var(--f-mono); font-size: .58rem;
+  letter-spacing: .2em; text-transform: uppercase; color: var(--gold-txt);
+  border: 1px solid var(--gold-mid); border-radius: var(--radius-sm);
+  padding: 3px 10px; margin-bottom: 14px;
+}
+.online-title {
+  font-family: var(--f-display); font-size: clamp(2rem, 5vw, 3.4rem);
+  color: var(--text); letter-spacing: .04em; line-height: 1; margin-bottom: 12px;
+}
+.online-desc { font-size: .88rem; color: var(--paper2); max-width: 460px; line-height: 1.6; }
+.online-badges { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; }
+.badge {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--surface2); border: 1px solid var(--border2);
+  border-radius: var(--radius-sm);
+  padding: 10px 16px; font-size: .78rem; color: var(--text); white-space: nowrap;
+}
+.badge svg { color: var(--gold-txt); flex-shrink: 0; }
+
+/* ── TÉLÉCHARGER ── */
+.dl-section {
+  position: relative; z-index: 2;
+  padding: 72px clamp(20px, 5vw, 72px);
+  text-align: center;
+}
+.dl-title {
+  font-family: var(--f-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: var(--text); letter-spacing: .06em; margin-bottom: 10px;
+}
+.dl-sub { font-size: .9rem; color: var(--paper2); margin-bottom: 40px; }
+
+.dl-platforms {
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+}
+.dl-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-weight: 600; font-size: .84rem; letter-spacing: .06em; text-transform: uppercase;
+  padding: 15px 28px; border-radius: var(--radius-btn);
+  transition: opacity .2s, transform .15s, box-shadow .2s;
+}
+.dl-btn.primary {
+  background: var(--red); color: #fff;
+}
+.dl-btn.primary:hover {
+  opacity: .88; transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(var(--red-rgb),.35);
+}
+.dl-btn.secondary {
+  background: var(--surface); border: 1.5px solid var(--border2); color: var(--text);
+}
+.dl-btn.secondary:hover {
+  background: var(--surface2); border-color: rgba(var(--gold-rgb),.3);
+  transform: translateY(-2px);
+}
+.dl-meta {
+  margin-top: 24px; font-family: var(--f-mono); font-size: .62rem;
+  letter-spacing: .14em; color: var(--muted);
+}
+
+/* ── FOOTER ── */
+footer { position: relative; z-index: 2; background: #07060F; border-top: 1px solid rgba(255,255,255,.07); }
+.footer-main { display: flex; gap: 56px; flex-wrap: wrap; padding: 52px clamp(20px,5vw,72px) 40px; justify-content: space-between; }
+.footer-brand-col { max-width: 270px; }
+.footer-logo { font-family: var(--f-display); font-size: 1.7rem; letter-spacing: .1em; color: var(--gold-txt); display: flex; align-items: center; gap: 8px; }
+.footer-desc { margin-top: 12px; font-size: .78rem; color: var(--muted); line-height: 1.7; }
+.footer-socials { display: flex; gap: 8px; margin-top: 18px; flex-wrap: wrap; }
+.footer-social-btn { display: inline-flex; align-items: center; gap: 7px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 7px 14px; font-size: .72rem; color: var(--paper2); transition: border-color .2s, color .2s; }
+.footer-social-btn:hover { border-color: var(--border2); color: var(--text); }
+.footer-col-title { font-size: .67rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-family: var(--f-mono); padding-bottom: 10px; border-bottom: 2px solid var(--gold); margin-bottom: 18px; display: inline-block; }
+.footer-col-links { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+.footer-col-links a { font-size: .8rem; color: var(--muted); transition: color .2s; }
+.footer-col-links a:hover { color: var(--paper2); }
+.footer-contact-email { font-size: .8rem; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.footer-contact-sub { font-size: .75rem; color: var(--muted); line-height: 1.5; }
+.footer-bottom { padding: 16px clamp(20px,5vw,72px); border-top: 1px solid rgba(255,255,255,.06); display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.footer-copy { font-size: .65rem; color: var(--muted); font-family: var(--f-mono); }
+
+/* divider */
+.divider {
+  display: flex; align-items: center; gap: 16px;
+  padding: 0 clamp(20px, 5vw, 72px); margin: 0;
+}
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.divider-txt { font-family: var(--f-mono); font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+
+/* ── STATS ── */
+.stats-strip{padding:0 clamp(20px,5vw,72px) 72px;position:relative;z-index:2;}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);border:1px solid rgba(var(--gold-rgb),.18);border-radius:var(--radius);overflow:hidden;box-shadow:0 0 48px rgba(var(--gold-rgb),.05);}
+.stat-item{background:var(--surface);padding:40px 36px;display:flex;flex-direction:column;gap:8px;transition:background .25s;position:relative;overflow:hidden;}
+.stat-item::after{content:'';position:absolute;bottom:0;left:36px;right:36px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);border-radius:1px;opacity:0;transition:opacity .25s;}
+.stat-item:hover{background:var(--surface2);}
+.stat-item:hover::after{opacity:1;}
+.stat-num{font-family:var(--f-display);font-size:3.4rem;letter-spacing:.02em;color:var(--gold-txt);line-height:1;font-weight:700;}
+.stat-num.red{color:var(--red);}
+.stat-label{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);}
+
+/* ── DEMO SCENARIO ── */
+.demo-section{padding:72px clamp(20px,5vw,72px);position:relative;z-index:2;}
+.demo-card{max-width:760px;background:var(--surface);border:1px solid rgba(var(--gold-rgb),.22);border-radius:var(--radius);overflow:hidden;box-shadow:0 0 60px rgba(var(--gold-rgb),.06);}
+.demo-header{background:rgba(var(--gold-rgb),.05);border-bottom:1px solid rgba(var(--gold-rgb),.14);padding:12px 22px;display:flex;align-items:center;gap:8px;}
+.demo-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.demo-badge{font-family:var(--f-mono);font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-txt);margin-left:auto;}
+.demo-body{padding:28px 28px 24px;}
+.demo-dossier{font-family:var(--f-mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.demo-title{font-family:var(--f-display);font-size:1.45rem;letter-spacing:.05em;color:var(--text);margin-bottom:18px;}
+.demo-text{font-size:.9rem;color:var(--paper2);line-height:1.8;max-width:640px;}
+.demo-clue{display:inline;position:relative;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;outline:none;font-weight:600;color:var(--gold-txt);}
+.demo-clue::before{content:'';position:absolute;inset:1px -3px;background:var(--surface3);border-radius:3px;transition:opacity .25s;pointer-events:none;}
+.demo-clue:hover::before,.demo-clue:focus::before{opacity:0;}
+.demo-footer{border-top:1px solid var(--border);padding:12px 22px;font-family:var(--f-mono);font-size:.58rem;letter-spacing:.1em;color:var(--muted);display:flex;align-items:center;gap:8px;}
+
+/* ── AVIS ── */
+.reviews-section{padding:72px clamp(20px,5vw,72px);position:relative;z-index:2;}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
+.review-card{background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius);padding:26px 22px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s,transform .2s;}
+.review-card:hover{border-color:rgba(var(--gold-rgb),.28);transform:translateY(-2px);}
+.review-stars{color:var(--gold-txt);font-size:.82rem;letter-spacing:2px;}
+.review-text{font-size:.86rem;color:var(--paper2);line-height:1.65;font-style:italic;flex:1;}
+.review-author{display:flex;align-items:center;gap:10px;}
+.review-avatar{width:34px;height:34px;border-radius:50%;background:var(--surface3);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-size:.9rem;color:var(--gold-txt);flex-shrink:0;}
+.review-name{font-size:.8rem;font-weight:600;color:var(--text);}
+.review-role{font-size:.65rem;color:var(--muted);font-family:var(--f-mono);letter-spacing:.06em;}
+
+/* ── FAQ ── */
+.faq-section{padding:72px clamp(20px,5vw,72px);position:relative;z-index:2;}
+.faq-list{max-width:720px;display:flex;flex-direction:column;gap:2px;}
+.faq-item{border:1px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;transition:border-color .2s;}
+.faq-item.open{border-color:rgba(var(--gold-rgb),.3);}
+.faq-q{width:100%;background:var(--surface);border:none;color:var(--text);font-family:var(--f-body);font-size:.95rem;font-weight:500;padding:18px 20px;text-align:left;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:background .2s;}
+.faq-q:hover{background:var(--surface2);}
+.faq-chevron{flex-shrink:0;width:20px;height:20px;border:1.5px solid var(--muted);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .25s,border-color .25s;}
+.faq-item.open .faq-chevron{transform:rotate(180deg);border-color:var(--gold);}
+.faq-chevron svg{width:10px;height:10px;color:var(--muted);transition:color .25s;}
+.faq-item.open .faq-chevron svg{color:var(--gold-txt);}
+.faq-a{background:var(--surface);border-top:1px solid var(--border);padding:0 20px;max-height:0;overflow:hidden;font-size:.87rem;color:var(--paper2);line-height:1.65;transition:max-height .3s ease,padding .3s ease;}
+.faq-item.open .faq-a{max-height:200px;padding:16px 20px 20px;}
+
+/* ── Hamburger ── */
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;cursor:pointer;border:none;background:none;padding:4px;}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,opacity .25s;}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;z-index:199;background:rgba(9,9,26,.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:16px 0 20px;flex-direction:column;gap:2px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{display:flex;align-items:center;gap:12px;padding:13px 24px;font-size:.9rem;color:var(--paper2);transition:color .18s,background .18s;}
+.mobile-menu a:hover,.mobile-menu a:active{color:var(--gold-txt);background:rgba(232,185,35,.06);}
+.mobile-menu .mob-cta{margin:12px 24px 0;background:var(--gold);color:#06050D;font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:12px 20px;border-radius:10px;justify-content:center;}
+
+/* responsive */
+@media (max-width: 720px), (max-height: 480px) and (orientation: landscape) {
+  .nav { top: 10px; width: calc(100% - 24px); padding: 0 16px; border-radius: 999px; }
+  .nav-links { display: none; }
+  .nav-right { display: none; }
+  .nav-burger { display: flex; }
+  .hero-inner { flex-direction: column-reverse; text-align: center; }
+  .hero-text { align-items: center; text-align: center; }
+  .hero-logo-right { width: clamp(120px, 40vw, 200px); }
+  .hero-btns { justify-content: center; flex-direction: column; align-items: center; }
+  .hero-btns a { width: 100%; max-width: 280px; justify-content: center; }
+  .hero-eyebrow::after { display: none; }
+  .online-card { grid-template-columns: 1fr; }
+  .online-badges { flex-direction: row; flex-wrap: wrap; }
+  .float-loupe { width: 110px; right: 0; }
+  .float-card-l, .float-card-r { display: none; }
+  .footer-main { flex-direction: column; gap: 36px; }
+  .footer-brand-col { max-width: 100%; }
+  .dl-platforms { flex-direction: column; align-items: center; }
+  /* Features cards */
+  .features-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+  .feat-card { padding: 18px 14px !important; }
+  /* Gallery */
+  #gallery { padding: 40px 12px 56px !important; }
+  #carousel-dots > div { width: 9px !important; height: 9px !important; }
+  /* Steps "comment jouer" */
+  .steps { flex-direction: column !important; gap: 14px !important; }
+  /* Section padding */
+  section { padding-left: 16px !important; padding-right: 16px !important; }
+}
+</style>
+
+<!-- NAVBAR -->
+<nav class="nav">
+  <a href="#" class="nav-logo">
+    <img src="logoiconfinal-rounded.png" alt="ALIBI" width="36" height="36" style="border-radius:8px;object-fit:contain;">
+    ALIBI
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#" class="active">
+      <svg class="nav-icon" viewBox="0 0 18 18" fill="none">
+        <path d="M2 7.5L9 2l7 5.5V16a1 1 0 01-1 1H3a1 1 0 01-1-1V7.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M6.5 17v-6h5v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="nav-label">Accueil</span>
+    </a></li>
+    <li><a href="#comment-jouer">
+      <svg class="nav-icon" viewBox="0 0 18 18" fill="none">
+        <circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M9 8.5V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="9" cy="6" r=".9" fill="currentColor"/>
+      </svg>
+      <span class="nav-label">Comment jouer</span>
+    </a></li>
+    <li><a href="#en-ligne">
+      <svg class="nav-icon" viewBox="0 0 18 18" fill="none">
+        <circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M9 1.5C9 1.5 6 5 6 9s3 7.5 3 7.5M9 1.5C9 1.5 12 5 12 9s-3 7.5-3 7.5M1.5 9h15" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+      </svg>
+      <span class="nav-label">En ligne</span>
+    </a></li>
+    <li><a href="#telecharger">
+      <svg class="nav-icon" viewBox="0 0 18 18" fill="none">
+        <path d="M9 2v9M5.5 8L9 11.5 12.5 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2 13v2a1 1 0 001 1h12a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span class="nav-label">Télécharger</span>
+    </a></li>
+    <li><a href="arcade.html" style="color:var(--gold-txt)">
+      <svg class="nav-icon" viewBox="0 0 18 18" fill="none">
+        <rect x="2" y="5" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M6 9h4M8 7v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <circle cx="12.5" cy="8.5" r=".8" fill="currentColor"/>
+        <circle cx="12.5" cy="10.5" r=".8" fill="currentColor"/>
+        <path d="M7 4V3M11 4V3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+      </svg>
+      <span class="nav-label">Arcade</span>
+    </a></li>
+  </ul>
+
+  <div class="nav-right">
+    <a href="https://github.com/AdrienLZR/alibi-site/releases/download/v1.1.15/ALIBI-Setup-1.1.15.exe" class="nav-cta">
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 1v9M4 7l4 4 4-4M2 12v2a1 1 0 001 1h10a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Télécharger
+    </a>
+  </div>
+  <button class="nav-burger" id="nav-burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Menu mobile -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#">🏠 Accueil</a>
+  <a href="#comment-jouer">ℹ️ Comment jouer</a>
+  <a href="#en-ligne">🌐 En ligne</a>
+  <a href="#telecharger">⬇️ Télécharger</a>
+  <a href="arcade.html" style="color:var(--gold-txt);">🕹️ Arcade</a>
+  <a href="https://github.com/AdrienLZR/alibi-site/releases/download/v1.1.15/ALIBI-Setup-1.1.15.exe" class="mob-cta">⬇ Télécharger ALIBI</a>
+</div>
+<script>
+(function(){
+  const burger=document.getElementById('nav-burger');
+  const menu=document.getElementById('mobile-menu');
+  burger.addEventListener('click',()=>{
+    burger.classList.toggle('open');
+    menu.classList.toggle('open');
+  });
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    burger.classList.remove('open');
+    menu.classList.remove('open');
+  }));
+  // Mots censurés + demo-clue : focus au tap
+  document.querySelectorAll('.redact, .demo-clue').forEach(el=>{
+    el.addEventListener('click',()=>el.focus());
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    item.querySelector('.faq-q').addEventListener('click',()=>{
+      const isOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o=>o.classList.remove('open'));
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+})();
+</script>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+
+  <!-- magnifying glass -->
+  <div class="float float-loupe">
+    <svg viewBox="0 0 200 200" fill="none">
+      <circle cx="78" cy="78" r="60" stroke="#E8B923" stroke-width="9"/>
+      <circle cx="78" cy="78" r="44" stroke="#E8B923" stroke-width="3.5" stroke-dasharray="7 5" opacity=".55"/>
+      <line x1="126" y1="126" x2="188" y2="188" stroke="#E8B923" stroke-width="13" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <!-- fingerprint top left -->
+  <div class="float float-fp-tl">
+    <svg viewBox="0 0 120 120" fill="none">
+      <path d="M60 10C32.4 10 10 32.4 10 60" stroke="#E8B923" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M60 22C38.5 22 21 39.5 21 61" stroke="#E8B923" stroke-width="3" stroke-linecap="round"/>
+      <path d="M60 34C45 34 33 46 33 61" stroke="#E8B923" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M60 46C52 46 45.5 52.5 45.5 60" stroke="#E8B923" stroke-width="2" stroke-linecap="round"/>
+      <path d="M60 58C58 58 57 59 57 61" stroke="#E8B923" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M60 10C87.6 10 110 32.4 110 60" stroke="#E8B923" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M60 22C81.5 22 99 39.5 99 61" stroke="#E8B923" stroke-width="3" stroke-linecap="round"/>
+      <path d="M60 34C75 34 87 46 87 61" stroke="#E8B923" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M60 46C68 46 74.5 52.5 74.5 60" stroke="#E8B923" stroke-width="2" stroke-linecap="round"/>
+      <path d="M33 68C36 82 48 90 60 90C72 90 84 82 87 68" stroke="#E8B923" stroke-width="2.5"/>
+      <path d="M45.5 68C47 76 53 81 60 81C67 81 73 76 74.5 68" stroke="#E8B923" stroke-width="2"/>
+    </svg>
+  </div>
+
+  <!-- card left -->
+  <div class="float float-card-l">
+    <svg viewBox="0 0 90 120" fill="none">
+      <rect x="1" y="1" width="88" height="118" rx="8" fill="#11122B" stroke="#E8B923" stroke-width="1.5"/>
+      <rect x="8" y="8" width="74" height="9" rx="4" fill="#E8B923" opacity=".85"/>
+      <text x="45" y="16.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#09091A" font-weight="700">SUSPECT</text>
+      <rect x="16" y="26" width="58" height="58" rx="5" fill="none" stroke="rgba(232,185,35,.3)" stroke-width="1.2"/>
+      <text x="45" y="61" text-anchor="middle" font-family="monospace" font-size="22" fill="#E8B923" opacity=".35">?</text>
+      <rect x="12" y="96" width="36" height="3" rx="1.5" fill="rgba(232,185,35,.28)"/>
+      <rect x="12" y="104" width="50" height="3" rx="1.5" fill="rgba(232,185,35,.16)"/>
+      <rect x="12" y="112" width="28" height="3" rx="1.5" fill="rgba(232,185,35,.1)"/>
+    </svg>
+  </div>
+
+  <!-- card right -->
+  <div class="float float-card-r">
+    <svg viewBox="0 0 80 108" fill="none">
+      <rect x="1" y="1" width="78" height="106" rx="8" fill="#11122B" stroke="rgba(232,185,35,.55)" stroke-width="1.5"/>
+      <rect x="6" y="6" width="68" height="8" rx="4" fill="rgba(232,185,35,.45)"/>
+      <text x="40" y="13.5" text-anchor="middle" font-family="monospace" font-size="5" fill="#E8B923" opacity=".8">ALIBI</text>
+      <rect x="10" y="22" width="60" height="50" rx="4" fill="none" stroke="rgba(232,185,35,.2)" stroke-width="1"/>
+      <line x1="10" y1="32" x2="70" y2="32" stroke="rgba(232,185,35,.12)" stroke-width="1"/>
+      <line x1="10" y1="42" x2="70" y2="42" stroke="rgba(232,185,35,.12)" stroke-width="1"/>
+      <line x1="10" y1="52" x2="70" y2="52" stroke="rgba(232,185,35,.12)" stroke-width="1"/>
+      <line x1="10" y1="62" x2="70" y2="62" stroke="rgba(232,185,35,.12)" stroke-width="1"/>
+      <rect x="10" y="84" width="30" height="3" rx="1.5" fill="rgba(232,185,35,.22)"/>
+      <rect x="10" y="92" width="48" height="3" rx="1.5" fill="rgba(232,185,35,.13)"/>
+      <rect x="10" y="100" width="22" height="3" rx="1.5" fill="rgba(232,185,35,.08)"/>
+    </svg>
+  </div>
+
+  <!-- petits ronds fond -->
+  <div class="dot dot-1"></div>
+  <div class="dot dot-gold dot-2"></div>
+  <div class="dot dot-3"></div>
+  <div class="dot dot-gold dot-4"></div>
+  <div class="dot dot-5"></div>
+  <div class="dot dot-gold dot-6"></div>
+  <div class="dot dot-7"></div>
+  <div class="dot dot-gold dot-8"></div>
+  <div class="dot dot-9"></div>
+  <div class="dot dot-gold dot-10"></div>
+  <div class="dot dot-11"></div>
+  <div class="dot dot-gold dot-12"></div>
+  <div class="dot dot-13"></div>
+  <div class="dot dot-gold dot-14"></div>
+  <div class="dot dot-15"></div>
+  <div class="dot dot-gold dot-16"></div>
+
+  <!-- fp bottom right -->
+  <div class="float float-fp-br">
+    <svg viewBox="0 0 80 80" fill="none">
+      <path d="M40 6C20.7 6 5 21.7 5 41" stroke="#E8B923" stroke-width="3" stroke-linecap="round"/>
+      <path d="M40 16C26 16 15 27 15 41" stroke="#E8B923" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M40 26C32 26 25 33 25 41" stroke="#E8B923" stroke-width="2" stroke-linecap="round"/>
+      <path d="M40 6C59.3 6 75 21.7 75 41" stroke="#E8B923" stroke-width="3" stroke-linecap="round"/>
+      <path d="M40 16C54 16 65 27 65 41" stroke="#E8B923" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M40 26C48 26 55 33 55 41" stroke="#E8B923" stroke-width="2" stroke-linecap="round"/>
+      <path d="M25 48C27 58 33 63 40 63C47 63 53 58 55 48" stroke="#E8B923" stroke-width="2"/>
+    </svg>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Dossier N°001</p>
+      <h1 class="hero-title">ALIBI</h1>
+      <p class="hero-sub">
+        Le jeu d'enquête où <span class="redact" tabindex="0">la vérité</span> et <span class="redact" tabindex="0">le mensonge</span>
+        se confondent entre amis.
+      </p>
+      <div class="hero-btns">
+        <a href="https://github.com/AdrienLZR/alibi-site/releases/download/v1.1.15/ALIBI-Setup-1.1.15.exe" class="btn-primary">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1v9M4 7l4 4 4-4M2 12v2a1 1 0 001 1h10a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Télécharger
+        </a>
+      </div>
+    </div>
+    <div class="hero-logo-right">
+      <img src="logo-nobg.png" alt="ALIBI logo">
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES STRIP -->
+<section class="features">
+  <div class="features-grid">
+    <div class="feat-card">
+      <svg class="feat-icon" viewBox="0 0 30 30" fill="none">
+        <circle cx="15" cy="9" r="5" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M5 27c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="25" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2"/>
+      </svg>
+      <div class="feat-title">6 à 8 joueurs</div>
+      <div class="feat-desc">Trois paires : suspects, inspecteurs et avocats. Chacun joue de son côté.</div>
+    </div>
+    <div class="feat-card">
+      <svg class="feat-icon" viewBox="0 0 30 30" fill="none">
+        <rect x="3" y="5" width="24" height="20" rx="3" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M9 13h12M9 18h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="23" cy="21" r="5" fill="var(--surface)" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M21 21l1.5 1.5L25 19" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="feat-title">Scénarios réalistes</div>
+      <div class="feat-desc">Des scénarios uniques et crédibles, générés à la demande grâce à l'IA intégrée. Chaque partie, une nouvelle histoire.</div>
+    </div>
+    <div class="feat-card">
+      <svg class="feat-icon" viewBox="0 0 30 30" fill="none">
+        <circle cx="15" cy="15" r="12" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M15 7v8l4 2.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="feat-title">Temps réel</div>
+      <div class="feat-desc">Des parties synchronisées entre les deux appareils en temps réel, où que vous soyez.</div>
+    </div>
+    <div class="feat-card">
+      <svg class="feat-icon" viewBox="0 0 30 30" fill="none">
+        <rect x="3" y="7" width="18" height="16" rx="2.5" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M25 11l-4 2.5v3l4 2.5V11z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M7 12h10M7 16h6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".5"/>
+      </svg>
+      <div class="feat-title">Spectateur</div>
+      <div class="feat-desc">Scan le QR code pour suivre la partie en direct sur ton téléphone.</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <span class="stat-num">+500</span>
+      <span class="stat-label">Téléchargements</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num red">100%</span>
+      <span class="stat-label">de joueurs satisfaits</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">∞</span>
+      <span class="stat-label">Scénarios possibles</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><span class="divider-txt">Comment jouer</span></div>
+
+<section class="section" id="comment-jouer">
+  <p class="section-label">Le déroulement</p>
+  <h2 class="section-title">Quatre étapes. Une seule vérité.</h2>
+  <div class="steps">
+    <div class="step">
+      <span class="step-num">01 / 04</span>
+      <div class="step-divider"></div>
+      <div class="step-name">Choisissez les rôles</div>
+      <p class="step-desc">Deux suspects, deux inspecteurs. Chaque paire s'installe de son côté, sans se consulter.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">02 / 04</span>
+      <div class="step-divider"></div>
+      <div class="step-name">Construisez l'alibi</div>
+      <p class="step-desc">Les suspects reçoivent un scénario secret et répondent chacun aux mêmes questions — séparément.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">03 / 04</span>
+      <div class="step-divider"></div>
+      <div class="step-name">L'interrogatoire</div>
+      <p class="step-desc">Les inspecteurs posent les mêmes questions. Chaque contradiction est une preuve.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">04 / 04</span>
+      <div class="step-divider"></div>
+      <div class="step-name">La vérité éclate</div>
+      <p class="step-desc">Toutes les réponses sont révélées. Concordances, contradictions, score. Les suspects ont-ils tenu leur alibi ?</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="divider-txt">Mode en ligne</span></div>
+
+<!-- EN LIGNE -->
+<section class="online-section" id="en-ligne">
+  <div class="online-card">
+    <div class="online-card-text">
+      <span class="online-tag">Multijoueur</span>
+      <h2 class="online-title">Jouez à distance</h2>
+      <p class="online-desc">Créez une salle, partagez le code, et jouez depuis n'importe où. Les réponses se synchronisent en temps réel. Impossible de tricher.</p>
+    </div>
+    <div class="online-badges">
+      <div class="badge">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3.5L10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Synchro en direct
+      </div>
+      <div class="badge">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M5 7h6M5 10h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Code de salle
+      </div>
+      <div class="badge">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="1" stroke="currentColor" stroke-width="1.4"/><rect x="4" y="4" width="3" height="3" fill="currentColor"/><rect x="9" y="4" width="3" height="3" fill="currentColor"/><rect x="4" y="9" width="3" height="3" fill="currentColor"/><rect x="9" y="9" width="1.5" height="1.5" fill="currentColor"/></svg>
+        QR spectateur
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<div class="divider"><span class="divider-txt">Aperçu</span></div>
+<section id="gallery" style="padding:64px 0 80px;max-width:1100px;margin:0 auto;padding-left:24px;padding-right:24px;">
+  <div style="text-align:center;margin-bottom:40px;">
+    <p style="font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">APERÇU DU JEU</p>
+    <h2 style="font-family:'Oswald',sans-serif;font-size:2.2rem;font-weight:700;color:#ECE6DA;letter-spacing:.04em;">ENQUÊTE EN IMAGES</h2>
+  </div>
+  <div id="carousel" style="position:relative;overflow:hidden;border-radius:16px;border:1px solid rgba(232,185,35,.15);box-shadow:0 0 60px rgba(0,0,0,.5);">
+    <div id="carousel-track" style="display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1);">
+      <!-- Slide 1 : Menu -->
+      <div class="slide" style="min-width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:#06050D;">
+        <img src="screen-menu.png" alt="Menu principal ALIBI" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 24px 20px;background:linear-gradient(to top,rgba(6,5,13,.92) 0%,transparent 100%);">
+          <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.25em;color:#E8B923;text-transform:uppercase;margin-bottom:4px;">Menu principal</p>
+          <p style="font-family:'Oswald',sans-serif;font-size:1.05rem;color:#ECE6DA;font-weight:600;letter-spacing:.04em;">Choisissez votre rôle et lancez une partie</p>
+        </div>
+      </div>
+      <!-- Slide 2 : Avatar -->
+      <div class="slide" style="min-width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:#06050D;">
+        <img src="screen-avatar.png" alt="Personnalisation de l'avatar" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 24px 20px;background:linear-gradient(to top,rgba(6,5,13,.92) 0%,transparent 100%);">
+          <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.25em;color:#E8B923;text-transform:uppercase;margin-bottom:4px;">Personnalisation</p>
+          <p style="font-family:'Oswald',sans-serif;font-size:1.05rem;color:#ECE6DA;font-weight:600;letter-spacing:.04em;">Avatar personnalisable — incarnez votre inspecteur ou votre avocat</p>
+        </div>
+      </div>
+      <!-- Slide 3 : Scénario -->
+      <div class="slide" style="min-width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:#06050D;">
+        <img src="screen-scenario.png" alt="Écran de préparation du scénario" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 24px 20px;background:linear-gradient(to top,rgba(6,5,13,.92) 0%,transparent 100%);">
+          <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.25em;color:#E8B923;text-transform:uppercase;margin-bottom:4px;">Préparation</p>
+          <p style="font-family:'Oswald',sans-serif;font-size:1.05rem;color:#ECE6DA;font-weight:600;letter-spacing:.04em;">Mémorisez votre alibi avant l'interrogatoire</p>
+        </div>
+      </div>
+      <!-- Slide 3 : Interrogatoire -->
+      <div class="slide" style="min-width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:#06050D;">
+        <img src="screen-interrogatoire.png" alt="Salle d'interrogatoire" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 24px 20px;background:linear-gradient(to top,rgba(6,5,13,.92) 0%,transparent 100%);">
+          <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.25em;color:#E03055;text-transform:uppercase;margin-bottom:4px;">Interrogatoire</p>
+          <p style="font-family:'Oswald',sans-serif;font-size:1.05rem;color:#ECE6DA;font-weight:600;letter-spacing:.04em;">L'inspecteur pose ses questions — tenez votre histoire</p>
+        </div>
+      </div>
+      <!-- Slide 5 : Résultats -->
+      <div class="slide" style="min-width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:#06050D;">
+        <img src="screen-resultats.png" alt="Écran de résultats" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 24px 20px;background:linear-gradient(to top,rgba(6,5,13,.92) 0%,transparent 100%);">
+          <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.25em;color:#E8B923;text-transform:uppercase;margin-bottom:4px;">Résultats</p>
+          <p style="font-family:'Oswald',sans-serif;font-size:1.05rem;color:#ECE6DA;font-weight:600;letter-spacing:.04em;">Coupable ou innocent ? Le verdict tombe</p>
+        </div>
+      </div>
+      <!-- Slide 6 : CTA -->
+      <div class="slide" style="min-width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#06050D 0%,#0E0B1C 50%,#0A0918 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;position:relative;overflow:hidden;">
+        <div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.055) 1px,transparent 1px);background-size:32px 32px;"></div>
+        <div style="position:absolute;top:10%;right:8%;opacity:.1;font-size:8rem;color:#E8B923;line-height:1;">🔍</div>
+        <div style="position:absolute;bottom:12%;left:6%;opacity:.07;font-size:6rem;color:#E03055;">👣</div>
+        <p style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;color:rgba(255,255,255,.35);text-transform:uppercase;z-index:1;">Prêt à jouer ?</p>
+        <h3 style="font-family:'Oswald',sans-serif;font-size:2.6rem;color:#ECE6DA;font-weight:700;letter-spacing:.06em;z-index:1;text-align:center;line-height:1.15;">Téléchargez ALIBI<br><span style="color:#E8B923;">gratuitement</span></h3>
+        <a href="https://adrienlzr.github.io/ALIBI/#telecharger" style="z-index:1;display:inline-flex;align-items:center;gap:10px;background:#E8B923;color:#06050D;font-family:'Oswald',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 36px;border-radius:12px;text-decoration:none;box-shadow:0 0 32px rgba(232,185,35,.35);transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 0 48px rgba(232,185,35,.6)'" onmouseout="this.style.boxShadow='0 0 32px rgba(232,185,35,.35)'">Jouer maintenant →</a>
+      </div>
+    </div>
+    <!-- Contrôles -->
+    <button onclick="carouselPrev()" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);background:rgba(6,5,13,.75);border:1px solid rgba(255,255,255,.1);color:#ECE6DA;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(232,185,35,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">‹</button>
+    <button onclick="carouselNext()" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:rgba(6,5,13,.75);border:1px solid rgba(255,255,255,.1);color:#ECE6DA;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(232,185,35,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">›</button>
+    <!-- Dots -->
+    <div id="carousel-dots" style="position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:7px;"></div>
+  </div>
+</section>
+<script>
+(function(){
+  let ci=0; const n=6;
+  const track=document.getElementById('carousel-track');
+  const dots=document.getElementById('carousel-dots');
+  for(let i=0;i<n;i++){
+    const d=document.createElement('div');
+    d.style.cssText=`width:7px;height:7px;border-radius:50%;background:${i===0?'#E8B923':'rgba(255,255,255,.2)'};transition:background .3s;cursor:pointer;`;
+    d.onclick=()=>goTo(i); dots.appendChild(d);
+  }
+  function goTo(i){ ci=i; track.style.transform=`translateX(-${ci*100}%)`; [...dots.children].forEach((d,j)=>d.style.background=j===ci?'#E8B923':'rgba(255,255,255,.2)'); }
+  window.carouselPrev=()=>goTo((ci-1+n)%n);
+  window.carouselNext=()=>goTo((ci+1)%n);
+  setInterval(()=>goTo((ci+1)%n),5000);
+})();
+</script>
+
+<!-- AVIS -->
+<section class="reviews-section">
+  <p class="section-label">Ce qu'ils en pensent</p>
+  <h2 class="section-title" style="margin-bottom:32px;">Ils ont joué. Ils en parlent.</h2>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"On a joué 3h sans s'en rendre compte. Le mode interrogatoire est stressant dans le bon sens — personne n'ose se regarder dans les yeux."</p>
+      <div class="review-author">
+        <div class="review-avatar">T</div>
+        <div>
+          <div class="review-name">Théo M.</div>
+          <div class="review-role">Suspect — Partie N°7</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Les scénarios sont vraiment crédibles, on s'y croit totalement. Le fait que chacun joue sur son écran change tout à la dynamique."</p>
+      <div class="review-author">
+        <div class="review-avatar" style="color:var(--red)">C</div>
+        <div>
+          <div class="review-name">Camille R.</div>
+          <div class="review-role">Inspectrice — Partie N°3</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★☆</div>
+      <p class="review-text">"Simple à prendre en main, intense à jouer. Les suspects ont réussi à nous baratiner pendant 20 minutes — chapeau à eux."</p>
+      <div class="review-author">
+        <div class="review-avatar">L</div>
+        <div>
+          <div class="review-name">Lucas D.</div>
+          <div class="review-role">Avocat — Partie N°12</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="divider-txt">Télécharger</span></div>
+
+<!-- TÉLÉCHARGER -->
+<section class="dl-section" id="telecharger">
+  <h2 class="dl-title">TÉLÉCHARGER ALIBI</h2>
+  <p class="dl-sub">Gratuit · Application native · Toutes plateformes</p>
+
+  <div class="dl-platforms">
+    <a href="https://github.com/AdrienLZR/alibi-site/releases/download/v1.1.15/ALIBI-Setup-1.1.15.exe" class="dl-btn primary">
+      <!-- Windows logo -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.551H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.949"/></svg>
+      Windows · .exe
+    </a>
+    <a href="https://github.com/AdrienLZR/ALIBI/releases/download/v1.1.2/ALIBI-1.1.2-universal.dmg" class="dl-btn secondary">
+      <!-- Apple logo -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+      macOS · .dmg
+    </a>
+    <a href="https://github.com/AdrienLZR/ALIBI/releases/download/v1.1.2/ALIBI-1.1.2.AppImage" class="dl-btn secondary">
+      <!-- Linux / Tux logo -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489.117.779.567 1.563 1.036 2.296.84 1.284 1.857 2.476 2.458 3.84.418.962.648 1.96.562 3.083C8.646 23.5 8.5 23.783 8.5 24h7c0-.217-.146-.5-.146-1.431-.086-1.123.144-2.121.562-3.083.601-1.364 1.618-2.556 2.458-3.84.469-.733.919-1.517 1.036-2.296.123-.805-.009-1.657-.287-2.489-.589-1.771-1.831-3.47-2.716-4.521-.75-1.067-.974-1.928-1.05-3.02-.065-1.491 1.056-5.965-3.17-6.298-.165-.013-.325-.021-.48-.021zm.042 2.987c1.577.054 2.136 1.17 2.136 2.264 0 1.427-1.173 2.424-2.204 2.424-1.03 0-2.204-.997-2.204-2.424 0-1.094.559-2.21 2.136-2.264h.136zM10 8.987c.547 0 .97.379.97.847 0 .469-.423.847-.97.847-.548 0-.97-.378-.97-.847 0-.468.422-.847.97-.847zm4 0c.547 0 .97.379.97.847 0 .469-.423.847-.97.847-.548 0-.97-.378-.97-.847 0-.468.422-.847.97-.847z"/></svg>
+      Linux · .AppImage
+    </a>
+  </div>
+  <p class="dl-meta">Windows 10/11 · macOS 12+ · Ubuntu 20.04+</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <!-- Brand col -->
+    <div class="footer-brand-col">
+      <div class="footer-logo">
+        <img src="logoiconfinal-rounded.png" alt="ALIBI" width="40" height="40" style="border-radius:10px;object-fit:contain;">
+        ALIBI
+      </div>
+      <p class="footer-desc">Le jeu d'enquête coopératif. Reconstituez la nuit du crime, vérifiez les alibis et confondez le coupable en temps réel.</p>
+      <div class="footer-socials">
+        <a href="arcade.html" class="footer-social-btn">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="4" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M5 8.5h4M7 6.5v4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="11.5" cy="7.5" r=".8" fill="currentColor"/><circle cx="11.5" cy="9.5" r=".8" fill="currentColor"/></svg>
+          Arcade
+        </a>
+      </div>
+    </div>
+
+    <!-- Nav col -->
+    <div>
+      <div class="footer-col-title">Naviguer</div>
+      <ul class="footer-col-links">
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#comment-jouer">Comment jouer</a></li>
+        <li><a href="#en-ligne">En ligne</a></li>
+        <li><a href="#telecharger">Télécharger</a></li>
+        <li><a href="arcade.html">Arcade</a></li>
+        <li><a href="https://github.com/AdrienLZR/ALIBI/releases">Releases</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact col -->
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <p class="footer-contact-email">adri.lazare@gmail.com</p>
+      <p class="footer-contact-sub">Support & retours via GitHub Issues<br>ou directement par mail.</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 ALIBI — Tous droits réservés.</span>
+  </div>
+</footer>
+
+<script>
+// ── Titre dynamique selon la section visible ──
+const SECTIONS = [
+  { id: 'comment-jouer', title: 'ALIBI — Comment jouer' },
+  { id: 'en-ligne',      title: 'ALIBI — En ligne' },
+  { id: 'telecharger',   title: 'ALIBI — Télécharger' },
+];
+
+// Clic sur nav → titre immédiat
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    const href = a.getAttribute('href') || '';
+    const match = SECTIONS.find(s => href.includes(s.id));
+    document.title = match ? match.title : 'ALIBI';
+  });
+});
+
+// Scroll → titre selon section visible
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const match = SECTIONS.find(s => s.id === e.target.id);
+      if (match) document.title = match.title;
+    }
+  });
+  // Si on est en haut (hero visible), reset
+}, { threshold: 0.35 });
+
+SECTIONS.forEach(s => {
+  const el = document.getElementById(s.id);
+  if (el) obs.observe(el);
+});
+
+// Reset au hero
+const hero = document.getElementById('accueil') || document.querySelector('.hero');
+if (hero) {
+  const heroObs = new IntersectionObserver(e => {
+    if (e[0].isIntersecting) document.title = 'ALIBI';
+  }, { threshold: 0.3 });
+  heroObs.observe(hero);
+}
+</script>
