@@ -1,9 +1,11 @@
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ALIBI — Accueil</title>
 <!-- deploy -->
 <link rel="icon" type="image/png" href="logoiconfinal-rounded.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=DM+Sans:ital,opsz,wght
+@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap">
 
 <style>
 :root {
@@ -54,7 +56,10 @@ body::before {
   content: '';
   position: fixed; inset: 0; z-index: 0; pointer-events: none;
   opacity: .03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' 
+xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' 
+numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' 
+filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 200px;
 }
 
@@ -195,7 +200,8 @@ body::before {
 
 @keyframes drift-a { 0%,100%{ transform:translateY(0) rotate(0deg);} 50%{transform:translateY(-18px) rotate(3deg);} }
 @keyframes drift-b { 0%,100%{ transform:translateY(0) rotate(0deg);} 50%{transform:translateY(-12px) rotate(-4deg);} }
-@keyframes drift-c { 0%,100%{ transform:translateY(0) rotate(-16deg);} 50%{transform:translateY(-14px) rotate(-20deg);} }
+@keyframes drift-c { 0%,100%{ transform:translateY(0) rotate(-16deg);} 50%{transform:translateY(-14px) 
+rotate(-20deg);} }
 @keyframes drift-d { 0%,100%{ transform:translateY(0) rotate(13deg);} 50%{transform:translateY(-10px) rotate(9deg);} }
 @media (prefers-reduced-motion: reduce) { .float { animation: none !important; } }
 
@@ -311,7 +317,8 @@ body::before {
 }
 .feat-icon { width: 30px; height: 30px; margin-bottom: 14px; color: var(--gold-txt); }
 .feat-card:nth-child(odd) .feat-icon { color: var(--red); }
-.feat-card:nth-child(odd):hover { border-color: rgba(var(--red-rgb),.3); box-shadow: 0 8px 28px rgba(var(--red-rgb),.12); }
+.feat-card:nth-child(odd):hover { border-color: rgba(var(--red-rgb),.3); box-shadow: 0 8px 28px 
+rgba(var(--red-rgb),.12); }
 .feat-title {
   font-family: var(--f-display); font-size: 1.25rem;
   letter-spacing: .04em; color: var(--text); margin-bottom: 7px;
@@ -442,20 +449,27 @@ body::before {
 
 /* ── FOOTER ── */
 footer { position: relative; z-index: 2; background: #07060F; border-top: 1px solid rgba(255,255,255,.07); }
-.footer-main { display: flex; gap: 56px; flex-wrap: wrap; padding: 52px clamp(20px,5vw,72px) 40px; justify-content: space-between; }
+.footer-main { display: flex; gap: 56px; flex-wrap: wrap; padding: 52px clamp(20px,5vw,72px) 40px; justify-content: 
+space-between; }
 .footer-brand-col { max-width: 270px; }
-.footer-logo { font-family: var(--f-display); font-size: 1.7rem; letter-spacing: .1em; color: var(--gold-txt); display: flex; align-items: center; gap: 8px; }
+.footer-logo { font-family: var(--f-display); font-size: 1.7rem; letter-spacing: .1em; color: var(--gold-txt); 
+display: flex; align-items: center; gap: 8px; }
 .footer-desc { margin-top: 12px; font-size: .78rem; color: var(--muted); line-height: 1.7; }
 .footer-socials { display: flex; gap: 8px; margin-top: 18px; flex-wrap: wrap; }
-.footer-social-btn { display: inline-flex; align-items: center; gap: 7px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 7px 14px; font-size: .72rem; color: var(--paper2); transition: border-color .2s, color .2s; }
+.footer-social-btn { display: inline-flex; align-items: center; gap: 7px; background: var(--surface); border: 1px 
+solid var(--border); border-radius: 8px; padding: 7px 14px; font-size: .72rem; color: var(--paper2); transition: 
+border-color .2s, color .2s; }
 .footer-social-btn:hover { border-color: var(--border2); color: var(--text); }
-.footer-col-title { font-size: .67rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-family: var(--f-mono); padding-bottom: 10px; border-bottom: 2px solid var(--gold); margin-bottom: 18px; display: inline-block; }
+.footer-col-title { font-size: .67rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); 
+font-family: var(--f-mono); padding-bottom: 10px; border-bottom: 2px solid var(--gold); margin-bottom: 18px; display: 
+inline-block; }
 .footer-col-links { list-style: none; display: flex; flex-direction: column; gap: 11px; }
 .footer-col-links a { font-size: .8rem; color: var(--muted); transition: color .2s; }
 .footer-col-links a:hover { color: var(--paper2); }
 .footer-contact-email { font-size: .8rem; font-weight: 600; color: var(--text); margin-bottom: 8px; }
 .footer-contact-sub { font-size: .75rem; color: var(--muted); line-height: 1.5; }
-.footer-bottom { padding: 16px clamp(20px,5vw,72px); border-top: 1px solid rgba(255,255,255,.06); display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.footer-bottom { padding: 16px clamp(20px,5vw,72px); border-top: 1px solid rgba(255,255,255,.06); display: flex; 
+align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .footer-copy { font-size: .65rem; color: var(--muted); font-family: var(--f-mono); }
 
 /* divider */
@@ -464,43 +478,59 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
   padding: 0 clamp(20px, 5vw, 72px); margin: 0;
 }
 .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-.divider-txt { font-family: var(--f-mono); font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.divider-txt { font-family: var(--f-mono); font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; color: 
+var(--muted); white-space: nowrap; }
 
 /* ── STATS ── */
 .stats-strip{padding:0 clamp(20px,5vw,72px) 72px;position:relative;z-index:2;}
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);border:1px solid rgba(var(--gold-rgb),.18);border-radius:var(--radius);overflow:hidden;box-shadow:0 0 48px rgba(var(--gold-rgb),.05);}
-.stat-item{background:var(--surface);padding:40px 36px;display:flex;flex-direction:column;gap:8px;transition:background .25s;position:relative;overflow:hidden;}
-.stat-item::after{content:'';position:absolute;bottom:0;left:36px;right:36px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);border-radius:1px;opacity:0;transition:opacity .25s;}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);bord
+er:1px solid rgba(var(--gold-rgb),.18);border-radius:var(--radius);overflow:hidden;box-shadow:0 0 48px 
+rgba(var(--gold-rgb),.05);}
+.stat-item{background:var(--surface);padding:40px 
+36px;display:flex;flex-direction:column;gap:8px;transition:background .25s;position:relative;overflow:hidden;}
+.stat-item::after{content:'';position:absolute;bottom:0;left:36px;right:36px;height:2px;background:linear-gradient(90de
+g,var(--gold),transparent);border-radius:1px;opacity:0;transition:opacity .25s;}
 .stat-item:hover{background:var(--surface2);}
 .stat-item:hover::after{opacity:1;}
-.stat-num{font-family:var(--f-display);font-size:3.4rem;letter-spacing:.02em;color:var(--gold-txt);line-height:1;font-weight:700;}
+.stat-num{font-family:var(--f-display);font-size:3.4rem;letter-spacing:.02em;color:var(--gold-txt);line-height:1;font-w
+eight:700;}
 .stat-num.red{color:var(--red);}
 .stat-label{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);}
 
 /* ── DEMO SCENARIO ── */
 .demo-section{padding:72px clamp(20px,5vw,72px);position:relative;z-index:2;}
-.demo-card{max-width:760px;background:var(--surface);border:1px solid rgba(var(--gold-rgb),.22);border-radius:var(--radius);overflow:hidden;box-shadow:0 0 60px rgba(var(--gold-rgb),.06);}
-.demo-header{background:rgba(var(--gold-rgb),.05);border-bottom:1px solid rgba(var(--gold-rgb),.14);padding:12px 22px;display:flex;align-items:center;gap:8px;}
+.demo-card{max-width:760px;background:var(--surface);border:1px solid 
+rgba(var(--gold-rgb),.22);border-radius:var(--radius);overflow:hidden;box-shadow:0 0 60px rgba(var(--gold-rgb),.06);}
+.demo-header{background:rgba(var(--gold-rgb),.05);border-bottom:1px solid rgba(var(--gold-rgb),.14);padding:12px 
+22px;display:flex;align-items:center;gap:8px;}
 .demo-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
-.demo-badge{font-family:var(--f-mono);font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-txt);margin-left:auto;}
+.demo-badge{font-family:var(--f-mono);font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-tx
+t);margin-left:auto;}
 .demo-body{padding:28px 28px 24px;}
-.demo-dossier{font-family:var(--f-mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.demo-dossier{font-family:var(--f-mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted
+);margin-bottom:10px;}
 .demo-title{font-family:var(--f-display);font-size:1.45rem;letter-spacing:.05em;color:var(--text);margin-bottom:18px;}
 .demo-text{font-size:.9rem;color:var(--paper2);line-height:1.8;max-width:640px;}
-.demo-clue{display:inline;position:relative;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;outline:none;font-weight:600;color:var(--gold-txt);}
-.demo-clue::before{content:'';position:absolute;inset:1px -3px;background:var(--surface3);border-radius:3px;transition:opacity .25s;pointer-events:none;}
+.demo-clue{display:inline;position:relative;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manip
+ulation;-webkit-tap-highlight-color:transparent;outline:none;font-weight:600;color:var(--gold-txt);}
+.demo-clue::before{content:'';position:absolute;inset:1px 
+-3px;background:var(--surface3);border-radius:3px;transition:opacity .25s;pointer-events:none;}
 .demo-clue:hover::before,.demo-clue:focus::before{opacity:0;}
-.demo-footer{border-top:1px solid var(--border);padding:12px 22px;font-family:var(--f-mono);font-size:.58rem;letter-spacing:.1em;color:var(--muted);display:flex;align-items:center;gap:8px;}
+.demo-footer{border-top:1px solid var(--border);padding:12px 22px;font-family:var(--f-mono);font-size:.58rem;letter-spa
+cing:.1em;color:var(--muted);display:flex;align-items:center;gap:8px;}
 
 /* ── AVIS ── */
 .reviews-section{padding:72px clamp(20px,5vw,72px);position:relative;z-index:2;}
 .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
-.review-card{background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius);padding:26px 22px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s,transform .2s;}
+.review-card{background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius);padding:26px 
+22px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s,transform .2s;}
 .review-card:hover{border-color:rgba(var(--gold-rgb),.28);transform:translateY(-2px);}
 .review-stars{color:var(--gold-txt);font-size:.82rem;letter-spacing:2px;}
 .review-text{font-size:.86rem;color:var(--paper2);line-height:1.65;font-style:italic;flex:1;}
 .review-author{display:flex;align-items:center;gap:10px;}
-.review-avatar{width:34px;height:34px;border-radius:50%;background:var(--surface3);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-size:.9rem;color:var(--gold-txt);flex-shrink:0;}
+.review-avatar{width:34px;height:34px;border-radius:50%;background:var(--surface3);border:1px solid var(--border2);disp
+lay:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-size:.9rem;color:var(--gold-txt);f
+lex-shrink:0;}
 .review-name{font-size:.8rem;font-weight:600;color:var(--text);}
 .review-role{font-size:.65rem;color:var(--muted);font-family:var(--f-mono);letter-spacing:.06em;}
 
@@ -509,26 +539,37 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
 .faq-list{max-width:720px;display:flex;flex-direction:column;gap:2px;}
 .faq-item{border:1px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;transition:border-color .2s;}
 .faq-item.open{border-color:rgba(var(--gold-rgb),.3);}
-.faq-q{width:100%;background:var(--surface);border:none;color:var(--text);font-family:var(--f-body);font-size:.95rem;font-weight:500;padding:18px 20px;text-align:left;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:background .2s;}
+.faq-q{width:100%;background:var(--surface);border:none;color:var(--text);font-family:var(--f-body);font-size:.95rem;fo
+nt-weight:500;padding:18px 20px;text-align:left;cursor:pointer;display:flex;align-items:center;justify-content:space-be
+tween;gap:16px;transition:background .2s;}
 .faq-q:hover{background:var(--surface2);}
-.faq-chevron{flex-shrink:0;width:20px;height:20px;border:1.5px solid var(--muted);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .25s,border-color .25s;}
+.faq-chevron{flex-shrink:0;width:20px;height:20px;border:1.5px solid 
+var(--muted);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform 
+.25s,border-color .25s;}
 .faq-item.open .faq-chevron{transform:rotate(180deg);border-color:var(--gold);}
 .faq-chevron svg{width:10px;height:10px;color:var(--muted);transition:color .25s;}
 .faq-item.open .faq-chevron svg{color:var(--gold-txt);}
-.faq-a{background:var(--surface);border-top:1px solid var(--border);padding:0 20px;max-height:0;overflow:hidden;font-size:.87rem;color:var(--paper2);line-height:1.65;transition:max-height .3s ease,padding .3s ease;}
+.faq-a{background:var(--surface);border-top:1px solid var(--border);padding:0 
+20px;max-height:0;overflow:hidden;font-size:.87rem;color:var(--paper2);line-height:1.65;transition:max-height .3s 
+ease,padding .3s ease;}
 .faq-item.open .faq-a{max-height:200px;padding:16px 20px 20px;}
 
 /* ── Hamburger ── */
-.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;cursor:pointer;border:none;background:none;padding:4px;}
-.nav-burger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,opacity .25s;}
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;cursor:pointer;bor
+der:none;background:none;padding:4px;}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform 
+.25s,opacity .25s;}
 .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .nav-burger.open span:nth-child(2){opacity:0;}
 .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;z-index:199;background:rgba(9,9,26,.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:16px 0 20px;flex-direction:column;gap:2px;}
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;z-index:199;background:rgba(9,9,26,.98);backdrop-filte
+r:blur(20px);border-bottom:1px solid var(--border);padding:16px 0 20px;flex-direction:column;gap:2px;}
 .mobile-menu.open{display:flex;}
-.mobile-menu a{display:flex;align-items:center;gap:12px;padding:13px 24px;font-size:.9rem;color:var(--paper2);transition:color .18s,background .18s;}
+.mobile-menu a{display:flex;align-items:center;gap:12px;padding:13px 
+24px;font-size:.9rem;color:var(--paper2);transition:color .18s,background .18s;}
 .mobile-menu a:hover,.mobile-menu a:active{color:var(--gold-txt);background:rgba(232,185,35,.06);}
-.mobile-menu .mob-cta{margin:12px 24px 0;background:var(--gold);color:#06050D;font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:12px 20px;border-radius:10px;justify-content:center;}
+.mobile-menu .mob-cta{margin:12px 24px 0;background:var(--gold);color:#06050D;font-weight:700;font-size:.78rem;letter-s
+pacing:.08em;text-transform:uppercase;padding:12px 20px;border-radius:10px;justify-content:center;}
 
 /* responsive */
 @media (max-width: 720px), (max-height: 480px) and (orientation: landscape) {
@@ -565,15 +606,18 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
 <!-- NAVBAR -->
 <nav class="nav">
   <a href="#" class="nav-logo">
-    <img src="logoiconfinal-rounded.png" alt="ALIBI" width="36" height="36" style="border-radius:8px;object-fit:contain;">
+    <img src="logoiconfinal-rounded.png" alt="ALIBI" width="36" height="36" 
+style="border-radius:8px;object-fit:contain;">
     ALIBI
   </a>
 
   <ul class="nav-links">
     <li><a href="#" class="active">
       <svg class="nav-icon" viewBox="0 0 18 18" fill="none">
-        <path d="M2 7.5L9 2l7 5.5V16a1 1 0 01-1 1H3a1 1 0 01-1-1V7.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-        <path d="M6.5 17v-6h5v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2 7.5L9 2l7 5.5V16a1 1 0 01-1 1H3a1 1 0 01-1-1V7.5z" stroke="currentColor" stroke-width="1.5" 
+stroke-linejoin="round"/>
+        <path d="M6.5 17v-6h5v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" 
+stroke-linejoin="round"/>
       </svg>
       <span class="nav-label">Accueil</span>
     </a></li>
@@ -588,14 +632,17 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
     <li><a href="#en-ligne">
       <svg class="nav-icon" viewBox="0 0 18 18" fill="none">
         <circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.5"/>
-        <path d="M9 1.5C9 1.5 6 5 6 9s3 7.5 3 7.5M9 1.5C9 1.5 12 5 12 9s-3 7.5-3 7.5M1.5 9h15" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        <path d="M9 1.5C9 1.5 6 5 6 9s3 7.5 3 7.5M9 1.5C9 1.5 12 5 12 9s-3 7.5-3 7.5M1.5 9h15" stroke="currentColor" 
+stroke-width="1.3" stroke-linecap="round"/>
       </svg>
       <span class="nav-label">En ligne</span>
     </a></li>
     <li><a href="#telecharger">
       <svg class="nav-icon" viewBox="0 0 18 18" fill="none">
-        <path d="M9 2v9M5.5 8L9 11.5 12.5 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M2 13v2a1 1 0 001 1h12a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M9 2v9M5.5 8L9 11.5 12.5 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" 
+stroke-linejoin="round"/>
+        <path d="M2 13v2a1 1 0 001 1h12a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" 
+stroke-linecap="round"/>
       </svg>
       <span class="nav-label">Télécharger</span>
     </a></li>
@@ -612,8 +659,9 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
   </ul>
 
   <div class="nav-right">
-    <a href="https://github.com/AdrienLZR/alibi-site/releases/download/v1.1.15/ALIBI-Setup-1.1.15.exe" class="nav-cta">
-      <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 1v9M4 7l4 4 4-4M2 12v2a1 1 0 001 1h10a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <a href="https://github.com/AdrienLZR/alibi-site/releases/download/v1.1.16/ALIBI.Setup.1.1.16.exe" class="nav-cta">
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 1v9M4 7l4 4 4-4M2 12v2a1 1 0 001 1h10a1 
+1 0 001-1v-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Télécharger
     </a>
   </div>
@@ -629,7 +677,8 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
   <a href="#en-ligne">🌐 En ligne</a>
   <a href="#telecharger">⬇️ Télécharger</a>
   <a href="arcade.html" style="color:var(--gold-txt);">🕹️ Arcade</a>
-  <a href="https://github.com/AdrienLZR/alibi-site/releases/download/v1.1.15/ALIBI-Setup-1.1.15.exe" class="mob-cta">⬇ Télécharger ALIBI</a>
+  <a href="https://github.com/AdrienLZR/alibi-site/releases/download/v1.1.16/ALIBI.Setup.1.1.16.exe" class="mob-cta">⬇ 
+Télécharger ALIBI</a>
 </div>
 <script>
 (function(){
@@ -694,9 +743,11 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
     <svg viewBox="0 0 90 120" fill="none">
       <rect x="1" y="1" width="88" height="118" rx="8" fill="#11122B" stroke="#E8B923" stroke-width="1.5"/>
       <rect x="8" y="8" width="74" height="9" rx="4" fill="#E8B923" opacity=".85"/>
-      <text x="45" y="16.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#09091A" font-weight="700">SUSPECT</text>
+      <text x="45" y="16.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#09091A" 
+font-weight="700">SUSPECT</text>
       <rect x="16" y="26" width="58" height="58" rx="5" fill="none" stroke="rgba(232,185,35,.3)" stroke-width="1.2"/>
-      <text x="45" y="61" text-anchor="middle" font-family="monospace" font-size="22" fill="#E8B923" opacity=".35">?</text>
+      <text x="45" y="61" text-anchor="middle" font-family="monospace" font-size="22" fill="#E8B923" 
+opacity=".35">?</text>
       <rect x="12" y="96" width="36" height="3" rx="1.5" fill="rgba(232,185,35,.28)"/>
       <rect x="12" y="104" width="50" height="3" rx="1.5" fill="rgba(232,185,35,.16)"/>
       <rect x="12" y="112" width="28" height="3" rx="1.5" fill="rgba(232,185,35,.1)"/>
@@ -706,9 +757,11 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
   <!-- card right -->
   <div class="float float-card-r">
     <svg viewBox="0 0 80 108" fill="none">
-      <rect x="1" y="1" width="78" height="106" rx="8" fill="#11122B" stroke="rgba(232,185,35,.55)" stroke-width="1.5"/>
+      <rect x="1" y="1" width="78" height="106" rx="8" fill="#11122B" stroke="rgba(232,185,35,.55)" 
+stroke-width="1.5"/>
       <rect x="6" y="6" width="68" height="8" rx="4" fill="rgba(232,185,35,.45)"/>
-      <text x="40" y="13.5" text-anchor="middle" font-family="monospace" font-size="5" fill="#E8B923" opacity=".8">ALIBI</text>
+      <text x="40" y="13.5" text-anchor="middle" font-family="monospace" font-size="5" fill="#E8B923" 
+opacity=".8">ALIBI</text>
       <rect x="10" y="22" width="60" height="50" rx="4" fill="none" stroke="rgba(232,185,35,.2)" stroke-width="1"/>
       <line x1="10" y1="32" x2="70" y2="32" stroke="rgba(232,185,35,.12)" stroke-width="1"/>
       <line x1="10" y1="42" x2="70" y2="42" stroke="rgba(232,185,35,.12)" stroke-width="1"/>
@@ -756,12 +809,15 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
       <p class="hero-eyebrow">Dossier N°001</p>
       <h1 class="hero-title">ALIBI</h1>
       <p class="hero-sub">
-        Le jeu d'enquête où <span class="redact" tabindex="0">la vérité</span> et <span class="redact" tabindex="0">le mensonge</span>
+        Le jeu d'enquête où <span class="redact" tabindex="0">la vérité</span> et <span class="redact" tabindex="0">le 
+mensonge</span>
         se confondent entre amis.
       </p>
       <div class="hero-btns">
-        <a href="https://github.com/AdrienLZR/alibi-site/releases/download/v1.1.15/ALIBI-Setup-1.1.15.exe" class="btn-primary">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1v9M4 7l4 4 4-4M2 12v2a1 1 0 001 1h10a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a href="https://github.com/AdrienLZR/alibi-site/releases/download/v1.1.16/ALIBI.Setup.1.1.16.exe" 
+class="btn-primary">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1v9M4 7l4 4 4-4M2 12v2a1 1 0 001 
+1h10a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Télécharger
         </a>
       </div>
@@ -778,7 +834,8 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
     <div class="feat-card">
       <svg class="feat-icon" viewBox="0 0 30 30" fill="none">
         <circle cx="15" cy="9" r="5" stroke="currentColor" stroke-width="1.8"/>
-        <path d="M5 27c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M5 27c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="currentColor" stroke-width="1.8" 
+stroke-linecap="round"/>
         <circle cx="25" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2"/>
       </svg>
       <div class="feat-title">6 à 8 joueurs</div>
@@ -789,15 +846,18 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
         <rect x="3" y="5" width="24" height="20" rx="3" stroke="currentColor" stroke-width="1.8"/>
         <path d="M9 13h12M9 18h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         <circle cx="23" cy="21" r="5" fill="var(--surface)" stroke="currentColor" stroke-width="1.5"/>
-        <path d="M21 21l1.5 1.5L25 19" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M21 21l1.5 1.5L25 19" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" 
+stroke-linejoin="round"/>
       </svg>
       <div class="feat-title">Scénarios réalistes</div>
-      <div class="feat-desc">Des scénarios uniques et crédibles, générés à la demande grâce à l'IA intégrée. Chaque partie, une nouvelle histoire.</div>
+      <div class="feat-desc">Des scénarios uniques et crédibles, générés à la demande grâce à l'IA intégrée. Chaque 
+partie, une nouvelle histoire.</div>
     </div>
     <div class="feat-card">
       <svg class="feat-icon" viewBox="0 0 30 30" fill="none">
         <circle cx="15" cy="15" r="12" stroke="currentColor" stroke-width="1.8"/>
-        <path d="M15 7v8l4 2.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 7v8l4 2.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" 
+stroke-linejoin="round"/>
       </svg>
       <div class="feat-title">Temps réel</div>
       <div class="feat-desc">Des parties synchronisées entre les deux appareils en temps réel, où que vous soyez.</div>
@@ -848,7 +908,8 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
       <span class="step-num">02 / 04</span>
       <div class="step-divider"></div>
       <div class="step-name">Construisez l'alibi</div>
-      <p class="step-desc">Les suspects reçoivent un scénario secret et répondent chacun aux mêmes questions — séparément.</p>
+      <p class="step-desc">Les suspects reçoivent un scénario secret et répondent chacun aux mêmes questions — 
+séparément.</p>
     </div>
     <div class="step">
       <span class="step-num">03 / 04</span>
@@ -860,7 +921,8 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
       <span class="step-num">04 / 04</span>
       <div class="step-divider"></div>
       <div class="step-name">La vérité éclate</div>
-      <p class="step-desc">Toutes les réponses sont révélées. Concordances, contradictions, score. Les suspects ont-ils tenu leur alibi ?</p>
+      <p class="step-desc">Toutes les réponses sont révélées. Concordances, contradictions, score. Les suspects 
+ont-ils tenu leur alibi ?</p>
     </div>
   </div>
 </section>
@@ -873,19 +935,26 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
     <div class="online-card-text">
       <span class="online-tag">Multijoueur</span>
       <h2 class="online-title">Jouez à distance</h2>
-      <p class="online-desc">Créez une salle, partagez le code, et jouez depuis n'importe où. Les réponses se synchronisent en temps réel. Impossible de tricher.</p>
+      <p class="online-desc">Créez une salle, partagez le code, et jouez depuis n'importe où. Les réponses se 
+synchronisent en temps réel. Impossible de tricher.</p>
     </div>
     <div class="online-badges">
       <div class="badge">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3.5L10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" 
+stroke-width="1.5"/><path d="M8 5v3.5L10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         Synchro en direct
       </div>
       <div class="badge">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M5 7h6M5 10h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="2" 
+stroke="currentColor" stroke-width="1.5"/><path d="M5 7h6M5 10h4" stroke="currentColor" stroke-width="1.2" 
+stroke-linecap="round"/></svg>
         Code de salle
       </div>
       <div class="badge">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="1" stroke="currentColor" stroke-width="1.4"/><rect x="4" y="4" width="3" height="3" fill="currentColor"/><rect x="9" y="4" width="3" height="3" fill="currentColor"/><rect x="4" y="9" width="3" height="3" fill="currentColor"/><rect x="9" y="9" width="1.5" height="1.5" fill="currentColor"/></svg>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="1" 
+stroke="currentColor" stroke-width="1.4"/><rect x="4" y="4" width="3" height="3" fill="currentColor"/><rect x="9" 
+y="4" width="3" height="3" fill="currentColor"/><rect x="4" y="9" width="3" height="3" fill="currentColor"/><rect 
+x="9" y="9" width="1.5" height="1.5" fill="currentColor"/></svg>
         QR spectateur
       </div>
     </div>
@@ -896,66 +965,119 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
 <div class="divider"><span class="divider-txt">Aperçu</span></div>
 <section id="gallery" style="padding:64px 0 80px;max-width:1100px;margin:0 auto;padding-left:24px;padding-right:24px;">
   <div style="text-align:center;margin-bottom:40px;">
-    <p style="font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">APERÇU DU JEU</p>
-    <h2 style="font-family:'Oswald',sans-serif;font-size:2.2rem;font-weight:700;color:#ECE6DA;letter-spacing:.04em;">ENQUÊTE EN IMAGES</h2>
+    <p style="font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(-
+-gold);margin-bottom:10px;">APERÇU DU JEU</p>
+    <h2 
+style="font-family:'Oswald',sans-serif;font-size:2.2rem;font-weight:700;color:#ECE6DA;letter-spacing:.04em;">ENQUÊTE 
+EN IMAGES</h2>
   </div>
-  <div id="carousel" style="position:relative;overflow:hidden;border-radius:16px;border:1px solid rgba(232,185,35,.15);box-shadow:0 0 60px rgba(0,0,0,.5);">
+  <div id="carousel" style="position:relative;overflow:hidden;border-radius:16px;border:1px solid 
+rgba(232,185,35,.15);box-shadow:0 0 60px rgba(0,0,0,.5);">
     <div id="carousel-track" style="display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1);">
       <!-- Slide 1 : Menu -->
-      <div class="slide" style="min-width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:#06050D;">
-        <img src="screen-menu.png" alt="Menu principal ALIBI" style="width:100%;height:100%;object-fit:cover;display:block;">
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 24px 20px;background:linear-gradient(to top,rgba(6,5,13,.92) 0%,transparent 100%);">
-          <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.25em;color:#E8B923;text-transform:uppercase;margin-bottom:4px;">Menu principal</p>
-          <p style="font-family:'Oswald',sans-serif;font-size:1.05rem;color:#ECE6DA;font-weight:600;letter-spacing:.04em;">Choisissez votre rôle et lancez une partie</p>
+      <div class="slide" 
+style="min-width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:#06050D;">
+        <img src="screen-menu.png" alt="Menu principal ALIBI" 
+style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 24px 20px;background:linear-gradient(to 
+top,rgba(6,5,13,.92) 0%,transparent 100%);">
+          <p style="font-family:'DM 
+Mono',monospace;font-size:.58rem;letter-spacing:.25em;color:#E8B923;text-transform:uppercase;margin-bottom:4px;">Menu 
+principal</p>
+          <p style="font-family:'Oswald',sans-serif;font-size:1.05rem;color:#ECE6DA;font-weight:600;letter-spacing:.04e
+m;">Choisissez votre rôle et lancez une partie</p>
         </div>
       </div>
       <!-- Slide 2 : Avatar -->
-      <div class="slide" style="min-width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:#06050D;">
-        <img src="screen-avatar.png" alt="Personnalisation de l'avatar" style="width:100%;height:100%;object-fit:cover;display:block;">
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 24px 20px;background:linear-gradient(to top,rgba(6,5,13,.92) 0%,transparent 100%);">
-          <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.25em;color:#E8B923;text-transform:uppercase;margin-bottom:4px;">Personnalisation</p>
-          <p style="font-family:'Oswald',sans-serif;font-size:1.05rem;color:#ECE6DA;font-weight:600;letter-spacing:.04em;">Avatar personnalisable — incarnez votre inspecteur ou votre avocat</p>
+      <div class="slide" 
+style="min-width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:#06050D;">
+        <img src="screen-avatar.png" alt="Personnalisation de l'avatar" 
+style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 24px 20px;background:linear-gradient(to 
+top,rgba(6,5,13,.92) 0%,transparent 100%);">
+          <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.25em;color:#E8B923;text-transform:
+uppercase;margin-bottom:4px;">Personnalisation</p>
+          <p 
+style="font-family:'Oswald',sans-serif;font-size:1.05rem;color:#ECE6DA;font-weight:600;letter-spacing:.04em;">Avatar 
+personnalisable — incarnez votre inspecteur ou votre avocat</p>
         </div>
       </div>
       <!-- Slide 3 : Scénario -->
-      <div class="slide" style="min-width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:#06050D;">
-        <img src="screen-scenario.png" alt="Écran de préparation du scénario" style="width:100%;height:100%;object-fit:cover;display:block;">
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 24px 20px;background:linear-gradient(to top,rgba(6,5,13,.92) 0%,transparent 100%);">
-          <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.25em;color:#E8B923;text-transform:uppercase;margin-bottom:4px;">Préparation</p>
-          <p style="font-family:'Oswald',sans-serif;font-size:1.05rem;color:#ECE6DA;font-weight:600;letter-spacing:.04em;">Mémorisez votre alibi avant l'interrogatoire</p>
+      <div class="slide" 
+style="min-width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:#06050D;">
+        <img src="screen-scenario.png" alt="Écran de préparation du scénario" 
+style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 24px 20px;background:linear-gradient(to 
+top,rgba(6,5,13,.92) 0%,transparent 100%);">
+          <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.25em;color:#E8B923;text-transform:
+uppercase;margin-bottom:4px;">Préparation</p>
+          <p style="font-family:'Oswald',sans-serif;font-size:1.05rem;color:#ECE6DA;font-weight:600;letter-spacing:.04e
+m;">Mémorisez votre alibi avant l'interrogatoire</p>
         </div>
       </div>
       <!-- Slide 3 : Interrogatoire -->
-      <div class="slide" style="min-width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:#06050D;">
-        <img src="screen-interrogatoire.png" alt="Salle d'interrogatoire" style="width:100%;height:100%;object-fit:cover;display:block;">
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 24px 20px;background:linear-gradient(to top,rgba(6,5,13,.92) 0%,transparent 100%);">
-          <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.25em;color:#E03055;text-transform:uppercase;margin-bottom:4px;">Interrogatoire</p>
-          <p style="font-family:'Oswald',sans-serif;font-size:1.05rem;color:#ECE6DA;font-weight:600;letter-spacing:.04em;">L'inspecteur pose ses questions — tenez votre histoire</p>
+      <div class="slide" 
+style="min-width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:#06050D;">
+        <img src="screen-interrogatoire.png" alt="Salle d'interrogatoire" 
+style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 24px 20px;background:linear-gradient(to 
+top,rgba(6,5,13,.92) 0%,transparent 100%);">
+          <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.25em;color:#E03055;text-transform:
+uppercase;margin-bottom:4px;">Interrogatoire</p>
+          <p style="font-family:'Oswald',sans-serif;font-size:1.05rem;color:#ECE6DA;font-weight:600;letter-spacing:.04e
+m;">L'inspecteur pose ses questions — tenez votre histoire</p>
         </div>
       </div>
       <!-- Slide 5 : Résultats -->
-      <div class="slide" style="min-width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:#06050D;">
-        <img src="screen-resultats.png" alt="Écran de résultats" style="width:100%;height:100%;object-fit:cover;display:block;">
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 24px 20px;background:linear-gradient(to top,rgba(6,5,13,.92) 0%,transparent 100%);">
-          <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.25em;color:#E8B923;text-transform:uppercase;margin-bottom:4px;">Résultats</p>
-          <p style="font-family:'Oswald',sans-serif;font-size:1.05rem;color:#ECE6DA;font-weight:600;letter-spacing:.04em;">Coupable ou innocent ? Le verdict tombe</p>
+      <div class="slide" 
+style="min-width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:#06050D;">
+        <img src="screen-resultats.png" alt="Écran de résultats" 
+style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 24px 20px;background:linear-gradient(to 
+top,rgba(6,5,13,.92) 0%,transparent 100%);">
+          <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.25em;color:#E8B923;text-transform:
+uppercase;margin-bottom:4px;">Résultats</p>
+          <p 
+style="font-family:'Oswald',sans-serif;font-size:1.05rem;color:#ECE6DA;font-weight:600;letter-spacing:.04em;">Coupable 
+ou innocent ? Le verdict tombe</p>
         </div>
       </div>
       <!-- Slide 6 : CTA -->
-      <div class="slide" style="min-width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#06050D 0%,#0E0B1C 50%,#0A0918 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;position:relative;overflow:hidden;">
-        <div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.055) 1px,transparent 1px);background-size:32px 32px;"></div>
+      <div class="slide" style="min-width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#06050D 0%,#0E0B1C 
+50%,#0A0918 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;position:relati
+ve;overflow:hidden;">
+        <div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.055) 
+1px,transparent 1px);background-size:32px 32px;"></div>
         <div style="position:absolute;top:10%;right:8%;opacity:.1;font-size:8rem;color:#E8B923;line-height:1;">🔍</div>
         <div style="position:absolute;bottom:12%;left:6%;opacity:.07;font-size:6rem;color:#E03055;">👣</div>
-        <p style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;color:rgba(255,255,255,.35);text-transform:uppercase;z-index:1;">Prêt à jouer ?</p>
-        <h3 style="font-family:'Oswald',sans-serif;font-size:2.6rem;color:#ECE6DA;font-weight:700;letter-spacing:.06em;z-index:1;text-align:center;line-height:1.15;">Téléchargez ALIBI<br><span style="color:#E8B923;">gratuitement</span></h3>
-        <a href="https://adrienlzr.github.io/ALIBI/#telecharger" style="z-index:1;display:inline-flex;align-items:center;gap:10px;background:#E8B923;color:#06050D;font-family:'Oswald',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 36px;border-radius:12px;text-decoration:none;box-shadow:0 0 32px rgba(232,185,35,.35);transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 0 48px rgba(232,185,35,.6)'" onmouseout="this.style.boxShadow='0 0 32px rgba(232,185,35,.35)'">Jouer maintenant →</a>
+        <p style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;color:rgba(255,255,255,.35);text
+-transform:uppercase;z-index:1;">Prêt à jouer ?</p>
+        <h3 style="font-family:'Oswald',sans-serif;font-size:2.6rem;color:#ECE6DA;font-weight:700;letter-spacing:.06em;
+z-index:1;text-align:center;line-height:1.15;">Téléchargez ALIBI<br><span 
+style="color:#E8B923;">gratuitement</span></h3>
+        <a href="https://adrienlzr.github.io/ALIBI/#telecharger" style="z-index:1;display:inline-flex;align-items:cente
+r;gap:10px;background:#E8B923;color:#06050D;font-family:'Oswald',sans-serif;font-weight:700;font-size:1rem;letter-spaci
+ng:.1em;text-transform:uppercase;padding:14px 36px;border-radius:12px;text-decoration:none;box-shadow:0 0 32px 
+rgba(232,185,35,.35);transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 0 48px rgba(232,185,35,.6)'" 
+onmouseout="this.style.boxShadow='0 0 32px rgba(232,185,35,.35)'">Jouer maintenant →</a>
       </div>
     </div>
     <!-- Contrôles -->
-    <button onclick="carouselPrev()" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);background:rgba(6,5,13,.75);border:1px solid rgba(255,255,255,.1);color:#ECE6DA;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(232,185,35,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">‹</button>
-    <button onclick="carouselNext()" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:rgba(6,5,13,.75);border:1px solid rgba(255,255,255,.1);color:#ECE6DA;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(232,185,35,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">›</button>
+    <button onclick="carouselPrev()" 
+style="position:absolute;left:14px;top:50%;transform:translateY(-50%);background:rgba(6,5,13,.75);border:1px solid rgba
+(255,255,255,.1);color:#ECE6DA;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;alig
+n-items:center;justify-content:center;backdrop-filter:blur(8px);transition:border-color .2s;" 
+onmouseover="this.style.borderColor='rgba(232,185,35,.5)'" 
+onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">‹</button>
+    <button onclick="carouselNext()" 
+style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:rgba(6,5,13,.75);border:1px solid rgb
+a(255,255,255,.1);color:#ECE6DA;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;ali
+gn-items:center;justify-content:center;backdrop-filter:blur(8px);transition:border-color .2s;" 
+onmouseover="this.style.borderColor='rgba(232,185,35,.5)'" 
+onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">›</button>
     <!-- Dots -->
-    <div id="carousel-dots" style="position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:7px;"></div>
+    <div id="carousel-dots" 
+style="position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:7px;"></div>
   </div>
 </section>
 <script>
@@ -965,10 +1087,12 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
   const dots=document.getElementById('carousel-dots');
   for(let i=0;i<n;i++){
     const d=document.createElement('div');
-    d.style.cssText=`width:7px;height:7px;border-radius:50%;background:${i===0?'#E8B923':'rgba(255,255,255,.2)'};transition:background .3s;cursor:pointer;`;
+    d.style.cssText=`width:7px;height:7px;border-radius:50%;background:${i===0?'#E8B923':'rgba(255,255,255,.2)'};transi
+tion:background .3s;cursor:pointer;`;
     d.onclick=()=>goTo(i); dots.appendChild(d);
   }
-  function goTo(i){ ci=i; track.style.transform=`translateX(-${ci*100}%)`; [...dots.children].forEach((d,j)=>d.style.background=j===ci?'#E8B923':'rgba(255,255,255,.2)'); }
+  function goTo(i){ ci=i; track.style.transform=`translateX(-${ci*100}%)`; 
+[...dots.children].forEach((d,j)=>d.style.background=j===ci?'#E8B923':'rgba(255,255,255,.2)'); }
   window.carouselPrev=()=>goTo((ci-1+n)%n);
   window.carouselNext=()=>goTo((ci+1)%n);
   setInterval(()=>goTo((ci+1)%n),5000);
@@ -982,7 +1106,8 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
   <div class="reviews-grid">
     <div class="review-card">
       <div class="review-stars">★★★★★</div>
-      <p class="review-text">"On a joué 3h sans s'en rendre compte. Le mode interrogatoire est stressant dans le bon sens — personne n'ose se regarder dans les yeux."</p>
+      <p class="review-text">"On a joué 3h sans s'en rendre compte. Le mode interrogatoire est stressant dans le bon 
+sens — personne n'ose se regarder dans les yeux."</p>
       <div class="review-author">
         <div class="review-avatar">T</div>
         <div>
@@ -993,7 +1118,8 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
     </div>
     <div class="review-card">
       <div class="review-stars">★★★★★</div>
-      <p class="review-text">"Les scénarios sont vraiment crédibles, on s'y croit totalement. Le fait que chacun joue sur son écran change tout à la dynamique."</p>
+      <p class="review-text">"Les scénarios sont vraiment crédibles, on s'y croit totalement. Le fait que chacun joue 
+sur son écran change tout à la dynamique."</p>
       <div class="review-author">
         <div class="review-avatar" style="color:var(--red)">C</div>
         <div>
@@ -1004,7 +1130,8 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
     </div>
     <div class="review-card">
       <div class="review-stars">★★★★☆</div>
-      <p class="review-text">"Simple à prendre en main, intense à jouer. Les suspects ont réussi à nous baratiner pendant 20 minutes — chapeau à eux."</p>
+      <p class="review-text">"Simple à prendre en main, intense à jouer. Les suspects ont réussi à nous baratiner 
+pendant 20 minutes — chapeau à eux."</p>
       <div class="review-author">
         <div class="review-avatar">L</div>
         <div>
@@ -1024,19 +1151,37 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
   <p class="dl-sub">Gratuit · Application native · Toutes plateformes</p>
 
   <div class="dl-platforms">
-    <a href="https://github.com/AdrienLZR/alibi-site/releases/download/v1.1.15/ALIBI-Setup-1.1.15.exe" class="dl-btn primary">
+    <a href="https://github.com/AdrienLZR/alibi-site/releases/download/v1.1.16/ALIBI.Setup.1.1.16.exe" class="dl-btn 
+primary">
       <!-- Windows logo -->
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.551H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.949"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 
+2.1v9.451H0m10.949-9.602L24 0v11.551H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.949"/></svg>
       Windows · .exe
     </a>
-    <a href="https://github.com/AdrienLZR/ALIBI/releases/download/v1.1.2/ALIBI-1.1.2-universal.dmg" class="dl-btn secondary">
+    <a href="https://github.com/AdrienLZR/ALIBI/releases/download/v1.1.2/ALIBI-1.1.2-universal.dmg" class="dl-btn 
+secondary">
       <!-- Apple logo -->
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 
+0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 
+3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 
+1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 
+2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 
+1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
       macOS · .dmg
     </a>
-    <a href="https://github.com/AdrienLZR/ALIBI/releases/download/v1.1.2/ALIBI-1.1.2.AppImage" class="dl-btn secondary">
+    <a href="https://github.com/AdrienLZR/ALIBI/releases/download/v1.1.2/ALIBI-1.1.2.AppImage" class="dl-btn 
+secondary">
       <!-- Linux / Tux logo -->
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489.117.779.567 1.563 1.036 2.296.84 1.284 1.857 2.476 2.458 3.84.418.962.648 1.96.562 3.083C8.646 23.5 8.5 23.783 8.5 24h7c0-.217-.146-.5-.146-1.431-.086-1.123.144-2.121.562-3.083.601-1.364 1.618-2.556 2.458-3.84.469-.733.919-1.517 1.036-2.296.123-.805-.009-1.657-.287-2.489-.589-1.771-1.831-3.47-2.716-4.521-.75-1.067-.974-1.928-1.05-3.02-.065-1.491 1.056-5.965-3.17-6.298-.165-.013-.325-.021-.48-.021zm.042 2.987c1.577.054 2.136 1.17 2.136 2.264 0 1.427-1.173 2.424-2.204 2.424-1.03 0-2.204-.997-2.204-2.424 0-1.094.559-2.21 2.136-2.264h.136zM10 8.987c.547 0 .97.379.97.847 0 .469-.423.847-.97.847-.548 0-.97-.378-.97-.847 0-.468.422-.847.97-.847zm4 0c.547 0 .97.379.97.847 0 .469-.423.847-.97.847-.548 0-.97-.378-.97-.847 0-.468.422-.847.97-.847z"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 
+0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 
+4.521-.278.832-.41 1.684-.287 2.489.117.779.567 1.563 1.036 2.296.84 1.284 1.857 2.476 2.458 3.84.418.962.648 1.96.562 
+3.083C8.646 23.5 8.5 23.783 8.5 24h7c0-.217-.146-.5-.146-1.431-.086-1.123.144-2.121.562-3.083.601-1.364 1.618-2.556 
+2.458-3.84.469-.733.919-1.517 
+1.036-2.296.123-.805-.009-1.657-.287-2.489-.589-1.771-1.831-3.47-2.716-4.521-.75-1.067-.974-1.928-1.05-3.02-.065-1.491 
+1.056-5.965-3.17-6.298-.165-.013-.325-.021-.48-.021zm.042 2.987c1.577.054 2.136 1.17 2.136 2.264 0 1.427-1.173 
+2.424-2.204 2.424-1.03 0-2.204-.997-2.204-2.424 0-1.094.559-2.21 2.136-2.264h.136zM10 8.987c.547 0 .97.379.97.847 0 
+.469-.423.847-.97.847-.548 0-.97-.378-.97-.847 0-.468.422-.847.97-.847zm4 0c.547 0 .97.379.97.847 0 
+.469-.423.847-.97.847-.548 0-.97-.378-.97-.847 0-.468.422-.847.97-.847z"/></svg>
       Linux · .AppImage
     </a>
   </div>
@@ -1049,13 +1194,18 @@ footer { position: relative; z-index: 2; background: #07060F; border-top: 1px so
     <!-- Brand col -->
     <div class="footer-brand-col">
       <div class="footer-logo">
-        <img src="logoiconfinal-rounded.png" alt="ALIBI" width="40" height="40" style="border-radius:10px;object-fit:contain;">
+        <img src="logoiconfinal-rounded.png" alt="ALIBI" width="40" height="40" 
+style="border-radius:10px;object-fit:contain;">
         ALIBI
       </div>
-      <p class="footer-desc">Le jeu d'enquête coopératif. Reconstituez la nuit du crime, vérifiez les alibis et confondez le coupable en temps réel.</p>
+      <p class="footer-desc">Le jeu d'enquête coopératif. Reconstituez la nuit du crime, vérifiez les alibis et 
+confondez le coupable en temps réel.</p>
       <div class="footer-socials">
         <a href="arcade.html" class="footer-social-btn">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="4" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M5 8.5h4M7 6.5v4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="11.5" cy="7.5" r=".8" fill="currentColor"/><circle cx="11.5" cy="9.5" r=".8" fill="currentColor"/></svg>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="4" width="14" height="9" rx="2" 
+stroke="currentColor" stroke-width="1.4"/><path d="M5 8.5h4M7 6.5v4" stroke="currentColor" stroke-width="1.3" 
+stroke-linecap="round"/><circle cx="11.5" cy="7.5" r=".8" fill="currentColor"/><circle cx="11.5" cy="9.5" r=".8" 
+fill="currentColor"/></svg>
           Arcade
         </a>
       </div>
@@ -1129,3 +1279,7 @@ if (hero) {
   heroObs.observe(hero);
 }
 </script>
+---SHA---
+0c7df93001279c23736049c4a1d6ade8978872fc
+
+
